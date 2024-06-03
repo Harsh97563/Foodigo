@@ -28,7 +28,7 @@ export default function Dashboard(){
                 <div className="flex md:w-[50vw] flex-col items-center space-y-6 text-center">
                     <div className="flex flex-col w-full items-center">
                         <div className=" text-[35px] w-full md:text-[70px] font-bold md:w-[30vw]">
-                            Best Restaurant In 
+                            Best Restaurant<br/> In 
                             <span className=" text-red-500"> Town.</span>
                         </div>
 
