@@ -20,6 +20,7 @@ const chefData = [
 export default function Dashboard(){
     const navigate = useNavigate()
     const [chef, setChef] = useState(false)
+    const displayData = chef ? chefData  : chefData.slice(0,3)
     const Categories = ["Dinner", "Lunch", "Dessert", "Drink"]
     
     return (
@@ -87,19 +88,19 @@ export default function Dashboard(){
                     </Tabs>
                 </div>
             </div>
-            <div className="flex w-full items-center flex-col mt-24">
-                <h1 className="md:text-[70px] font-bold">Our Popular Chef</h1>
-                <div className={` ${chef ? "md:grid": "md:flex"} hidden overflow-hidden md:w-[62vw] grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-10 grid-row-6 md:grid-rows-2 pt-16`}>
-                    {chefData.map((res)=> (
+            <div className="flex w-full items-center p-2 text-center flex-col mt-24">
+                <h1 className="text-[35px] mb-3 md:text-[70px] font-bold">Our Popular Chef</h1>
+                <div className={` grid w-full md:w-[59vw] overflow-hidden gap-x-5 gap-y-5 grid-rows-1 grid-cols-3 `}>
+                    {displayData.map((res)=> (
                         <ChefCards data={res}/>
                     ))}
                 </div>
-                <button className="mt-16 font-bold md:text-2xl text-white bg-red-500 p-5 px-16 rounded-lg"
+                <button className="mt-8 md:mt-16 font-bold md:text-2xl text-white bg-red-500 p-5 px-16 rounded-lg"
                 onClick={()=> setChef(prev => !prev)}
                 >{chef ? "View Less": "View All"}</button>
             </div>
-            <div className="flex flex-col items-center mt-16">
-                <h1 className="md:text-[40px] font-bold">What Our Customers Say</h1>
+            <div className="flex flex-col items-center mt-8 md:mt-16">
+                <h1 className="text-[20px] md:text-[40px] font-bold">What Our Customers Say</h1>
                 <Carousel/>
                 <div className="flex flex-col justify-center items-center bg-red-200 h-[30vh] md:w-[50vw] w-full rounded-3xl space-y-16 mt-10">
                     <div className=" text-2xl md:text-5xl font-bold">Hungary We are open now..</div>
