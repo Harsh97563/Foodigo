@@ -1,9 +1,7 @@
-import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export default function PopulerMenuCard({data, type}: any){
-    const navigate = useNavigate()
-    const [myorders, setMyorders] = useState([])    
+    const navigate = useNavigate()   
     return (
         <div className="flex flex-col items-center w-full space-y-3 md:space-y-10 md:w-[15vw]">
             <div className="w-[70vw] md:w-[15vw]">
